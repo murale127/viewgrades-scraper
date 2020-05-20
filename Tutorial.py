@@ -10,7 +10,10 @@ driver.get("https://www.iitm.ac.in/viewgrades/")
 rollno = driver.find_element_by_name("rollno")
 pwd = driver.find_element_by_name("pwd")
 
-rollno.send_keys("EP18B026")
-pwd.send_keys("QRNT@w9J")
+roll = input("Enter your roll number:")
+password = input("Enter your password:")
+
+rollno.send_keys(roll)
+pwd.send_keys(password)
 
 driver.find_element_by_name("submit").click()
