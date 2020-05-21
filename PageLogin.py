@@ -32,6 +32,11 @@ while driver.current_url=="https://www.iitm.ac.in/viewgrades/index.html" or driv
 # searching for releavent data using xpath
 driver.get("https://www.iitm.ac.in/viewgrades/studentauth/btechdual.php")
 
-name = driver.find_element_by_xpath("/html/body/")
+name = driver.find_element_by_xpath("/html/body/center/table/tbody/tr/th[3]")
+print("Hi,", name.text)
 
-print(name)
+cg = driver.find_element_by_xpath("/html/body/center/center/table[1]/tbody/tr[last()]/td[last()]")
+
+print("Your", cg.text)
+
+driver.close()
