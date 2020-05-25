@@ -5,7 +5,7 @@ from getpass import getpass
 import no_graph_features as ngf
 from course_details import tabulate_course_details
 # Specify Path to geckodriver for Firefox
-driver = webdriver.Firefox(executable_path=r"/home/murale/Downloads/geckodriver-v0.26.0-linux64/geckodriver")
+driver = webdriver.Firefox(executable_path=r"./geckodriver-v0.26.0-linux64/geckodriver")
 
 # Navigating to the webpage
 driver.get("https://www.iitm.ac.in/viewgrades/")
