@@ -1,5 +1,5 @@
 # viewgrades-scraper
-An interactive and alternate Command Line visualisation of an IITM student's grades by scraping data from https://www.iitm.ac.in/viewgrades/
+An interactive and alternate Command Line visualisation of an IITM student's grades by scraping data from https://www.iitm.ac.in/viewgrades/  
 Currently requires Firefox and works only on linux
 ## Setup
 1. Clone the repository onto your system (or download the .zip file and unzip it)
