@@ -54,8 +54,7 @@ while option.lower() == 'x':
     option = input('''
 How do you want you visualize your grades:
     a) GPA for courses taken in a specific department
-
-    Other features comming shortly.   
+  
 Enter x to exit
     ''')
     if option.lower() == 'a':
