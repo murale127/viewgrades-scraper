@@ -4,8 +4,13 @@ from selenium.webdriver.common.keys import Keys
 from getpass import getpass
 import no_graph_features as ngf
 from course_details import tabulate_course_details
+from selenium.webdriver.firefox.options import Options
+
+options = Options()
+options.headless = True
+
 # Specify Path to geckodriver for Firefox
-driver = webdriver.Firefox(executable_path=r"./geckodriver-v0.26.0-linux64/geckodriver")
+driver = webdriver.Firefox(options=options, executable_path=r"./geckodriver-v0.26.0-linux64/geckodriver")
 
 # Navigating to the webpage
 driver.get("https://www.iitm.ac.in/viewgrades/")
