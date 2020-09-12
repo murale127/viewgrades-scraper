@@ -54,15 +54,16 @@ courses, sem = tabulate_course_details(driver)
 driver.close()
 
 
-option = ' '
-while option.lower() == 'x':
-    option = input('''
+choice = ' '
+while choice.lower() != 'x':
+    choice = input('''
 How do you want you visualize your grades:
     a) GPA for courses taken in a specific department
 
-    Other features comming shortly.   
+    Other features will come soon.   
 Enter x to exit
     ''')
-    if option.lower() == 'a':
+    if choice.lower() == 'a':
         dept, gpa = ngf.Dept_GPA(courses)
         print("Your GPA of the courses done in", dept, "department is", gpa)
+    _ = input("\nPress enter to continue")
