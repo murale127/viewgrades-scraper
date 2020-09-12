@@ -59,11 +59,18 @@ while choice.lower() != 'x':
     choice = input('''
 How do you want you visualize your grades:
     a) GPA for courses taken in a specific department
+<<<<<<< HEAD
 
     Other features will come soon.   
+=======
+  
+>>>>>>> a23a184647e6ce241a2a6f4de2e4abc4e1ac1e2c
 Enter x to exit
     ''')
     if choice.lower() == 'a':
         dept, gpa = ngf.Dept_GPA(courses)
         print("Your GPA of the courses done in", dept, "department is", gpa)
+<<<<<<< HEAD
     _ = input("\nPress enter to continue")
+=======
+>>>>>>> a23a184647e6ce241a2a6f4de2e4abc4e1ac1e2c
