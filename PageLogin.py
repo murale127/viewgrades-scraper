@@ -56,8 +56,7 @@ driver.close()
 
 choice = ' '
 while choice.lower() != 'x':
-    choice = input('''
-How do you want you visualize your grades:
+    choice = input('''\nHow do you want you visualize your grades:
     a) GPA for courses taken in a specific department
 
     Other features will come soon.   
@@ -66,7 +65,7 @@ Enter x to exit
     ''')
     if choice.lower() == 'a':
         dept, gpa = ngf.Dept_GPA(courses)
-        print("Your GPA of the courses done in", dept, "department is", gpa)
-
-   		input("\nPress enter to continue")
-
+        print("Your GPA of the courses done in", dept, "department is", gpa, "\n")
+        dummy = input('''Press Enter to continue''')
+		
+		
