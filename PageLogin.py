@@ -3,14 +3,15 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from getpass import getpass
 import no_graph_features as ngf
+import graph_features as gf
 from course_details import tabulate_course_details
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chrome.options import Options
 
 options = Options()
 options.headless = True
 
 # Specify Path to geckodriver for Firefox
-driver = webdriver.Firefox(options=options, executable_path=r"./geckodriver-v0.26.0-linux64/geckodriver")
+driver = webdriver.Chrome('./chromedriver_linux64/chromedriver')
 
 # Navigating to the webpage
 driver.get("https://www.iitm.ac.in/viewgrades/")
@@ -50,7 +51,7 @@ print("Hi,", name.text)
 cg = driver.find_element_by_xpath("/html/body/center/center/table[1]/tbody/tr[last()]/td[last()]")
 print("Your", cg.text)
 
-courses, sem = tabulate_course_details(driver)
+courses, sem, gpas = tabulate_course_details(driver)
 driver.close()
 
 
@@ -58,8 +59,9 @@ choice = ' '
 while choice.lower() != 'x':
     choice = input('''\nHow do you want you visualize your grades:
     a) GPA for courses taken in a specific department
-
-    Other features will come soon.   
+    b) Credits per stream in bar chart
+    c) GPA per semester in bar chart
+    d) Grade and credits in specific course
 
 Enter x to exit
     ''')
@@ -67,5 +69,11 @@ Enter x to exit
         dept, gpa = ngf.Dept_GPA(courses)
         print("Your GPA of the courses done in", dept, "department is", gpa, "\n")
         dummy = input('''Press Enter to continue''')
-		
+    elif choice.lower() == 'b':
+        gf.Credits_stream(courses)
+    elif choice.lower() == 'c':
+        gf.gpa_graph(gpas)
+    elif choice.lower() == 'd':
+        course_check=input("Type course number to check: ")
+        ngf.courseCheck(course_check,courses)
 		
