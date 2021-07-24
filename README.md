@@ -6,7 +6,7 @@ Requires Chrome and can be run on Windows and Linux( also through WSL2)
 ## Setup
 
 1. Clone the repository onto your system (or download the .zip file and unzip it)
-   <pre><code></code></pre>
+   <pre><code>git clone https://github.com/Adil-MohammedK/IITM-viewgrades-scraper.git</code></pre>
 2. Navigate to the location where you have cloned/downloaded the code on terminal
 3. Create virtual environment
    <pre><code>python3 -m venv env</code></pre>
