@@ -20,3 +20,14 @@ def Dept_GPA(courses):
         gpa = round(total_points/total_credits, 2)
 
         return dept, gpa
+
+def courseCheck(name,courses):
+    flag=False
+    for i in range(len(courses[0])):
+            if courses[0][i] == name:
+                print("Course name is "+courses[1][i])
+                print("Your grade in "+name+" is: "+courses[4][i])
+                print("Your credits in "+name+" is: "+courses[3][i])
+                flag=True
+    if flag == False:
+        print("No such course found")

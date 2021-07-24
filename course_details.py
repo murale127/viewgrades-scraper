@@ -18,6 +18,7 @@ def tabulate_course_details(driver):
     course_grade = []
     credits = []
     sem = []
+    gpas = []
 
     for i in course_list:
         if i[0].isnumeric():
@@ -30,8 +31,12 @@ def tabulate_course_details(driver):
         elif i[0] == "Earned":
             if i[1][-2:].isnumeric():
                 credits.append((int(i[1][-2:]), count))
+                if i[2][0:3]=='GPA':
+                    gpas.append(float(i[2][4:]))
             else:
                 credits.append((int(i[1][-1]), count))
+                if i[2][0:3]=='GPA':
+                    gpas.append(float(i[2][4:]))
             
         else:
             count = 0
@@ -40,4 +45,4 @@ def tabulate_course_details(driver):
     course_summary = (course_code, course_name, course_category, course_credits, course_grade)
     sem_summary = (sem, credits)
 
-    return course_summary, sem_summary
+    return course_summary, sem_summary, gpas
