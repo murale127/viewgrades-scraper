@@ -8,7 +8,7 @@ def Dept_GPA(courses):
     '''
     while True:
         dept = input("Enter the department code: ")
-        total_credits = 0 
+        total_credits = 0
         total_points = 0
         for i in range(len(courses[0])):
             if courses[0][i][:2] == dept:
