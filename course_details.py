@@ -13,6 +13,7 @@ def tabulate_course_details(driver):
 
     course_list = [i.split() for i in course_list]
 
+    count = 0
     course_code = []
     course_name = []
     course_category = []
