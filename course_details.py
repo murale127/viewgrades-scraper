@@ -1,16 +1,19 @@
+from selenium.webdriver.common.by import By
+
 def tabulate_course_details(driver):
     '''
     driver: Webdriver element
 
     returns: Course and Semester details in a tabular format
     '''
-    courses = driver.find_element_by_xpath("/html/body/center/center/table[1]/tbody").text
+    courses = driver.find_element(By.XPATH, "/html/body/center/center/table[1]/tbody").text
     course_list = courses.split('\n')
 
     #print(course_list)
 
     course_list = [i.split() for i in course_list]
 
+    count = 0
     course_code = []
     course_name = []
     course_category = []
@@ -32,7 +35,7 @@ def tabulate_course_details(driver):
                 credits.append((int(i[1][-2:]), count))
             else:
                 credits.append((int(i[1][-1]), count))
-            
+
         else:
             count = 0
             sem.append(' '.join(i[:]))
