@@ -2,3 +2,4 @@ selenium
 numpy
 pandas
 matplotlib
+webdriver-manager
