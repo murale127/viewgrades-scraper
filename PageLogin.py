@@ -1,5 +1,6 @@
 # Necessary imports
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
 from getpass import getpass
@@ -12,7 +13,7 @@ options = Options()
 options.headless = True
 
 # Specify Path to geckodriver for Firefox
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
 # Navigating to the webpage
 driver.get("https://www.iitm.ac.in/viewgrades/")
